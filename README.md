@@ -2,8 +2,8 @@
 get textual diffs
 
 ### Functions
-static public List\<DiffRes\> **Diff**(string orig, string rev)<br />
-static private List\<DiffRes\> **GetDiff**(PathNode path, List<string> orig, List<string> rev)
+static public List\<DiffRes]\> **Diff**(List\<string\> orig, List\<string\> rev)<br />
+static public List\<DiffRes\> **Diff**(string orig, string rev)
   
 ### Class
 **DiffRes**
