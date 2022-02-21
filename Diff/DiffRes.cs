@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Diff
 {
-    public enum Type {Add, Delete, None};
+    public enum DiffType {Add, Delete, None};
     public class DiffRes
     {
-        private Type type;
-        public Type Type
+        private DiffType type;
+        public DiffType Type
         {
             get { return type; }
             set { type = value; }
@@ -22,7 +22,7 @@ namespace Diff
             set { index = value; }
         }
 
-        public DiffRes(Type type, int index)
+        public DiffRes(DiffType type, int index)
         {
             Type = type;
             Index = index;
