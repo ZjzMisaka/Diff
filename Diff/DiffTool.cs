@@ -193,11 +193,11 @@ namespace Diff
                     int prei = path.prev.i;
                     if (prei < i)
                     {
-                        result.Add(new DiffRes(DiffType.Delete, i));
+                        result.Add(new DiffRes(DiffType.Delete, i - 1));
                     }
                     else
                     {
-                        result.Add(new DiffRes(DiffType.Add, i));
+                        result.Add(new DiffRes(DiffType.Add, j - 1));
                     }
                 }
                 path = path.prev;

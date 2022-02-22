@@ -13,12 +13,13 @@ namespace DiffTest
         {
             List<string> strList1 = new List<string>();
             strList1.Add("123");
-            strList1.Add("456");
-            strList1.Add("789");
-            strList1.Add("0");
-            strList1.Add("1");
-            strList1.Add("2");
+            //strList1.Add("456");
+            //strList1.Add("789");
+            //strList1.Add("0");
+            //strList1.Add("1");
+            //strList1.Add("2");
             List<string> strList2 = new List<string>();
+            strList2.Add("123");
             strList2.Add("456");
             strList2.Add("789");
             strList2.Add("-1");
