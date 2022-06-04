@@ -44,9 +44,11 @@
     <Compile Include="DiffTool.cs" />
     <Compile Include="DiffNode.cs" />
     <Compile Include="DiffRes.cs" />
+    <Compile Include="GroupedDiffRes.cs" />
     <Compile Include="PathNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Snake.cs" />
+    <Compile Include="SplitedDiffRes.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
