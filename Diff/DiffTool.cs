@@ -236,7 +236,7 @@ namespace Diff
                                 {
                                     origList.Add(new PartSplitedDiffRes(-1));
                                 }
-                                for (int j = 0; j < subGroupedDiffResNext; ++j)
+                                for (int j = 0; j < subGroupedDiffResNext + 1; ++j)
                                 {
                                     splitedDiffTypeeList.Add(SplitedDiffType.Modify);
                                 }
@@ -247,7 +247,7 @@ namespace Diff
                                 {
                                     revList.Add(new PartSplitedDiffRes(-1));
                                 }
-                                for (int j = 0; j < subGroupedDiffRes; ++j)
+                                for (int j = 0; j < subGroupedDiffRes + 1; ++j)
                                 {
                                     splitedDiffTypeeList.Add(SplitedDiffType.Modify);
                                 }

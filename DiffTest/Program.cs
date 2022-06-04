@@ -44,7 +44,7 @@ namespace DiffTest
 
             List<DiffRes> res1 = DiffTool.Diff(strList1, strList2);
             List<GroupedDiffRes> grouped = DiffTool.GetGroupedResult(res1);
-            SplitedDiffRes splitedDiffRes = DiffTool.GetSplitedResult(grouped);
+            List<SplitedDiffRes> splitedDiffRes = DiffTool.GetSplitedResult(grouped);
 
             List<DiffRes> res2 = DiffTool.Diff("Aple", "bAppe");
         }
