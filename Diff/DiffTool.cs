@@ -239,7 +239,7 @@ namespace Diff
                             }
                             int subGroupedDiffRes = groupedDiffRes.RangeEnd - groupedDiffRes.RangeStart;
                             int subGroupedDiffResNext = groupedDiffResNext.RangeEnd - groupedDiffResNext.RangeStart;
-                            if (subGroupedDiffRes < subGroupedDiffResNext)
+                            if (subGroupedDiffRes <= subGroupedDiffResNext)
                             {
                                 for (int j = 0; j < subGroupedDiffResNext - subGroupedDiffRes; ++j)
                                 {
@@ -250,7 +250,7 @@ namespace Diff
                                     splitedDiffTypeeList.Add(SplitedDiffType.Modify);
                                 }
                             }
-                            else if (subGroupedDiffResNext < subGroupedDiffRes)
+                            else
                             {
                                 for (int j = 0; j < subGroupedDiffRes - subGroupedDiffResNext; ++j)
                                 {
