@@ -18,7 +18,7 @@ namespace Diff
         public PartSplitedDiffRes(int index, GetFrom getFrom)
         {
             this.Index = index;
-            this.GetFrom = GetFrom;
+            this.GetFrom = getFrom;
         }
     }
 }

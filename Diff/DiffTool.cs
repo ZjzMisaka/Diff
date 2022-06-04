@@ -182,6 +182,13 @@ namespace Diff
                 rangeEnd = i;
             }
 
+
+            GroupedDiffRes groupedDiffResLast = new GroupedDiffRes();
+            groupedDiffResLast.RangeStart = rangeStart;
+            groupedDiffResLast.RangeEnd = rangeEnd;
+            groupedDiffResLast.Type = typeNow;
+            rangeList.Add(groupedDiffResLast);
+
             return rangeList;
         }
 
@@ -197,6 +204,10 @@ namespace Diff
             int rangeListCount = rangeList.Count;
             List<PartSplitedDiffRes> origList = new List<PartSplitedDiffRes>();
             List<PartSplitedDiffRes> revList = new List<PartSplitedDiffRes>();
+
+            int origIndex = 0;
+            int revIndex = 0;
+            
             for (int i = 0; i < rangeListCount; ++i)
             {
                 GroupedDiffRes groupedDiffRes = rangeList[i];
@@ -210,11 +221,11 @@ namespace Diff
                         {
                             for (int j = groupedDiffRes.RangeStart; j <= groupedDiffRes.RangeEnd; ++j)
                             {
-                                origList.Add(new PartSplitedDiffRes(j, GetFrom.Orig));
+                                origList.Add(new PartSplitedDiffRes(origIndex++, GetFrom.Orig));
                             }
                             for (int j = groupedDiffResNext.RangeStart; j <= groupedDiffResNext.RangeEnd; ++j)
                             {
-                                revList.Add(new PartSplitedDiffRes(j, GetFrom.Rev));
+                                revList.Add(new PartSplitedDiffRes(revIndex++, GetFrom.Rev));
                             }
                             int subGroupedDiffRes = groupedDiffRes.RangeEnd - groupedDiffRes.RangeStart;
                             int subGroupedDiffResNext = groupedDiffResNext.RangeEnd - groupedDiffResNext.RangeStart;
@@ -240,7 +251,7 @@ namespace Diff
 
                     for (int j = groupedDiffRes.RangeStart; j <= groupedDiffRes.RangeEnd; ++j)
                     {
-                        origList.Add(new PartSplitedDiffRes(j, GetFrom.Orig));
+                        origList.Add(new PartSplitedDiffRes(origIndex++, GetFrom.Orig));
                         revList.Add(new PartSplitedDiffRes(0, GetFrom.Blank));
                     }
                 }
@@ -249,15 +260,15 @@ namespace Diff
                     for (int j = groupedDiffRes.RangeStart; j <= groupedDiffRes.RangeEnd; ++j)
                     {
                         origList.Add(new PartSplitedDiffRes(0, GetFrom.Blank));
-                        revList.Add(new PartSplitedDiffRes(j, GetFrom.Rev));
+                        revList.Add(new PartSplitedDiffRes(revIndex++, GetFrom.Rev));
                     }
                 }
                 else if (typeNow == DiffType.None)
                 {
                     for (int j = groupedDiffRes.RangeStart; j <= groupedDiffRes.RangeEnd; ++j)
                     {
-                        origList.Add(new PartSplitedDiffRes(j, GetFrom.Orig));
-                        revList.Add(new PartSplitedDiffRes(j, GetFrom.Orig));
+                        origList.Add(new PartSplitedDiffRes(origIndex++, GetFrom.Orig));
+                        revList.Add(new PartSplitedDiffRes(revIndex++, GetFrom.Rev));
                     }
                 }
             }

@@ -48,6 +48,7 @@
     <Compile Include="PathNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Snake.cs" />
+    <Compile Include="PartSplitedDiffRes.cs" />
     <Compile Include="SplitedDiffRes.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
