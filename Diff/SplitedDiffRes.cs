@@ -6,19 +6,12 @@ using System.Threading.Tasks;
 
 namespace Diff
 {
-    public enum GetFrom { Orig, Rev, Blank }
     public class SplitedDiffRes
     {
-        private int index;
-        private GetFrom getFrom;
+        private List<PartSplitedDiffRes> origPartSplitedDiffResList;
+        private List<PartSplitedDiffRes> revPartSplitedDiffResList;
 
-        public int Index { get => index; set => index = value; }
-        public GetFrom GetFrom { get => getFrom; set => getFrom = value; }
-
-        public SplitedDiffRes(int index, GetFrom getFrom)
-        {
-            this.Index = index;
-            this.GetFrom = GetFrom;
-        }
+        public List<PartSplitedDiffRes> OrigPartSplitedDiffResList { get => origPartSplitedDiffResList; set => origPartSplitedDiffResList = value; }
+        public List<PartSplitedDiffRes> RevPartSplitedDiffResList { get => revPartSplitedDiffResList; set => revPartSplitedDiffResList = value; }
     }
 }
