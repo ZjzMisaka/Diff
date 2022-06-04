@@ -43,10 +43,14 @@ namespace DiffTest
             strList2.Add("last");
 
             List<DiffRes> res1 = DiffTool.Diff(strList1, strList2);
-            List<GroupedDiffRes> grouped = DiffTool.GetGroupedResult(res1);
-            List<SplitedDiffRes> splitedDiffRes = DiffTool.GetSplitedResult(grouped);
+            List<GroupedDiffRes> grouped1 = DiffTool.GetGroupedResult(res1);
+            List<SplitedDiffRes> splitedDiffRes1 = DiffTool.GetSplitedResult(grouped1);
 
             List<DiffRes> res2 = DiffTool.Diff("Aple", "bAppe");
+
+            List<DiffRes> res3 = DiffTool.Diff(new List<string>(), new List<string>());
+            List<GroupedDiffRes> grouped3 = DiffTool.GetGroupedResult(res3);
+            List<SplitedDiffRes> splitedDiffRes3 = DiffTool.GetSplitedResult(grouped3);
         }
     }
 }

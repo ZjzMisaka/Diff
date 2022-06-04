@@ -162,6 +162,10 @@ namespace Diff
         static public List<GroupedDiffRes> GetGroupedResult(List<DiffRes> diffResList)
         {
             List<GroupedDiffRes> rangeList = new List<GroupedDiffRes>();
+            if (diffResList == null || diffResList.Count == 0)
+            {
+                return rangeList;
+            }
             DiffType typeNow = diffResList[0].Type;
             int rangeStart = 0;
             int rangeEnd = 0;
@@ -199,6 +203,11 @@ namespace Diff
 
         static public List<SplitedDiffRes> GetSplitedResult(List<GroupedDiffRes> rangeList)
         {
+            if (rangeList == null || rangeList.Count == 0)
+            {
+                return new List<SplitedDiffRes>();
+            }
+
             DiffType typeNow = rangeList[0].Type;
 
             int rangeListCount = rangeList.Count;
