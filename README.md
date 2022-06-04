@@ -11,8 +11,8 @@ Diff is available as [Nuget Package](https://www.nuget.org/packages/Diff/) now.
 static public List<DiffRes> Diff(List<string> orig, List<string> rev);
 static public List<DiffRes> Diff(string orig, string rev);
 static public List<GroupedDiffRes> GetGroupedResult(List<DiffRes> diffResList);
-static public SplitedDiffRes GetSplitedResult(List<DiffRes> diffResList);
-static public SplitedDiffRes GetSplitedResult(List<GroupedDiffRes> rangeList);
+static public List<SplitedDiffRes> GetSplitedResult(List<DiffRes> diffResList)
+static public List<SplitedDiffRes> GetSplitedResult(List<GroupedDiffRes> rangeList)
 ```
   
 ### Class
@@ -29,16 +29,11 @@ int rangeEnd;
 DiffType type;
 ```
 
-**PartSplitedDiffRes**
-```c#
-int index;
-GetFrom getFrom;
-```
-
 **SplitedDiffRes**
 ```c#
-List<PartSplitedDiffRes> origPartSplitedDiffResList;
-List<PartSplitedDiffRes> revPartSplitedDiffResList;
+int origIndex;
+int revIndex;
+SplitedDiffType type;
 ```
   
 ### Enum
@@ -47,7 +42,8 @@ List<PartSplitedDiffRes> revPartSplitedDiffResList;
 - Delete
 - None
 
-**GetFrom**
-- Orig
-- Rev
-- Blank
+**SplitedDiffType**
+- Add
+- Delete
+- None
+- Modify
