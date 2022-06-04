@@ -7,16 +7,47 @@ Get textual diffs.
 Diff is available as [Nuget Package](https://www.nuget.org/packages/Diff/) now.
 
 ### Functions
-static public List\<DiffRes\> **Diff**(List\<string\> orig, List\<string\> rev)  
-static public List\<DiffRes\> **Diff**(string orig, string rev)
+```c#
+static public List<DiffRes> Diff(List<string> orig, List<string> rev);
+static public List<DiffRes> Diff(string orig, string rev);
+static public List<GroupedDiffRes> GetGroupedResult(List<DiffRes> diffResList);
+static public SplitedDiffRes GetSplitedResult(List<DiffRes> diffResList);
+static public SplitedDiffRes GetSplitedResult(List<GroupedDiffRes> rangeList);
+```
   
 ### Class
 **DiffRes**
-- DiffType type
-- int index
+```c#
+DiffType type;
+int index;
+```
+
+**GroupedDiffRes**
+```c#
+int rangeStart;
+int rangeEnd;
+DiffType type;
+```
+
+**PartSplitedDiffRes**
+```c#
+int index;
+GetFrom getFrom;
+```
+
+**SplitedDiffRes**
+```c#
+List<PartSplitedDiffRes> origPartSplitedDiffResList;
+List<PartSplitedDiffRes> revPartSplitedDiffResList;
+```
   
 ### Enum
 **DiffType**
 - Add
 - Delete
 - None
+
+**GetFrom**
+- Orig
+- Rev
+- Blank
