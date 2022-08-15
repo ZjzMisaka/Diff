@@ -330,9 +330,10 @@ namespace Diff
                 {
                     int endi = path.i;
                     int begini = path.prev.i;
+                    int beginj = path.j;
                     for (int i = endi - 1; i >= begini; i--)
                     {
-                        result.Add(new DiffRes(DiffType.None, i, path.prev.j));
+                        result.Add(new DiffRes(DiffType.None, i, --beginj));
                     }
                 }
                 else
@@ -378,9 +379,10 @@ namespace Diff
                 {
                     int endi = path.i;
                     int begini = path.prev.i;
+                    int beginj = path.j;
                     for (int i = endi - 1; i >= begini; i--)
                     {
-                        result.Add(new DiffRes(DiffType.None, i, path.prev.j));
+                        result.Add(new DiffRes(DiffType.None, i, --beginj));
                     }
                 }
                 else

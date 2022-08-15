@@ -19,7 +19,8 @@ static public List<SplitedDiffRes> GetSplitedResult(List<GroupedDiffRes> rangeLi
 **DiffRes**
 ```c#
 DiffType type;
-int index;
+int origIndex;
+int revIndex;
 ```
 
 **GroupedDiffRes**

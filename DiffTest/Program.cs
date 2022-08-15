@@ -53,8 +53,8 @@ namespace DiffTest
             //List<SplitedDiffRes> splitedDiffRes3 = DiffTool.GetSplitedResult(grouped3);
 
             List<DiffRes> res4 = DiffTool.Diff(
-                new List<string>() { "11111111", "2222222",  "3333333",  "4444444",  "555", "666", "777", "888", "", "999" }, 
-                new List<string>() { "11111111", "22222222", "33333333", "44444444",                             "", "666" });
+                new List<string>() { "11111111", "2222222",  "3333333",  "4444444",  "555", "666", "777", "888", "", "999", "99", "88", "77" }, 
+                new List<string>() { "11111111", "22222222", "33333333", "44444444",                             "", "666", "99", "88", "77" });
             List<GroupedDiffRes> grouped4 = DiffTool.GetGroupedResult(res4);
             List<SplitedDiffRes> splitedDiffRes4 = DiffTool.GetSplitedResult(grouped4);
         }
