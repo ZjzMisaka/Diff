@@ -332,7 +332,7 @@ namespace Diff
                     int begini = path.prev.i;
                     for (int i = endi - 1; i >= begini; i--)
                     {
-                        result.Add(new DiffRes(DiffType.None, i));
+                        result.Add(new DiffRes(DiffType.None, i, path.prev.j));
                     }
                 }
                 else
@@ -342,11 +342,11 @@ namespace Diff
                     int prei = path.prev.i;
                     if (prei < i)
                     {
-                        result.Add(new DiffRes(DiffType.Delete, i - 1));
+                        result.Add(new DiffRes(DiffType.Delete, i - 1, -1));
                     }
                     else
                     {
-                        result.Add(new DiffRes(DiffType.Add, j - 1));
+                        result.Add(new DiffRes(DiffType.Add, -1, j - 1));
                     }
                 }
                 path = path.prev;
@@ -380,7 +380,7 @@ namespace Diff
                     int begini = path.prev.i;
                     for (int i = endi - 1; i >= begini; i--)
                     {
-                        result.Add(new DiffRes(DiffType.None, i));
+                        result.Add(new DiffRes(DiffType.None, i, path.prev.j));
                     }
                 }
                 else
@@ -390,11 +390,11 @@ namespace Diff
                     int prei = path.prev.i;
                     if (prei < i)
                     {
-                        result.Add(new DiffRes(DiffType.Delete, i));
+                        result.Add(new DiffRes(DiffType.Delete, i, -1));
                     }
                     else
                     {
-                        result.Add(new DiffRes(DiffType.Add, i));
+                        result.Add(new DiffRes(DiffType.Add, -1, i));
                     }
                 }
                 path = path.prev;

@@ -15,17 +15,25 @@ namespace Diff
             get { return type; }
             set { type = value; }
         }
-        private int index;
-        public int Index
+        private int origIndex;
+        private int revIndex;
+        public int OrigIndex
         {
-            get { return index; }
-            set { index = value; }
+            get { return origIndex; }
+            set { origIndex = value; }
         }
 
-        public DiffRes(DiffType type, int index)
+        public int RevIndex
+        {
+            get { return revIndex; }
+            set { revIndex = value; }
+        }
+
+        public DiffRes(DiffType type, int origIndex, int revIndex)
         {
             Type = type;
-            Index = index;
+            OrigIndex = origIndex;
+            RevIndex = revIndex;
         }
     }
 }
