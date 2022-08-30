@@ -196,12 +196,12 @@ namespace Diff
             return rangeList;
         }
 
-        static public List<SplitedDiffRes> GetSplitedResult(List<DiffRes> diffResList, bool mergeModify = true)
+        static public List<SplitedDiffRes> GetSplitedResult(List<DiffRes> diffResList)
         {
-            return GetSplitedResult(GetGroupedResult(diffResList), mergeModify);
+            return GetSplitedResult(GetGroupedResult(diffResList));
         }
 
-        static public List<SplitedDiffRes> GetSplitedResult(List<GroupedDiffRes> rangeList, bool mergeModify = true)
+        static public List<SplitedDiffRes> GetSplitedResult(List<GroupedDiffRes> rangeList)
         {
             if (rangeList == null || rangeList.Count == 0)
             {
@@ -227,7 +227,7 @@ namespace Diff
                     if (i + 1 < rangeListCount)
                     {
                         GroupedDiffRes groupedDiffResNext = rangeList[i + 1];
-                        if (groupedDiffResNext.Type == DiffType.Add && mergeModify)
+                        if (groupedDiffResNext.Type == DiffType.Add)
                         {
                             for (int j = groupedDiffRes.RangeStart; j <= groupedDiffRes.RangeEnd; ++j)
                             {
